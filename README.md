@@ -1,1 +1,2 @@
 # OneLineDiary-client
+# OneLineDiary-server

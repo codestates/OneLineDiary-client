@@ -1,4 +1,5 @@
-# 📝 당신의 하루를 한 줄에 담아보세요.
+# 📝 한 줄 일기
+> " 당신의 하루를 한 줄에 담아보세요. "
 
 여러분은 평소에 일기를 자주 쓰시나요?
 
@@ -12,3 +13,34 @@
 
 [추억지킴이] 한 줄 일기 입니다.
 
+
+# UI Design
+
+- 구현 후 스크린샷 추가
+
+
+# Used Stack & Architecture
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3df98c03-ed42-44d7-b0e0-a22a470079c9/oneline_diary.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T121221Z&X-Amz-Expires=86400&X-Amz-Signature=4f7c86b164eb5996ce0e6a1b0070ff359b206171ec7bdad2a473ef5054aa8cba&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22oneline_diary.png%22)
+
+
+# Flow Chart
+
+## Front-end
+
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f2370dba-d486-4244-93f5-e9185b45deb9/Flowchart_%283%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T135729Z&X-Amz-Expires=86400&X-Amz-Signature=4fd7f157d2424fcd1941af8101930aaf2b6b3650c09fba04e062437c3621ed10&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%283%29.jpg%22)
+
+## Back-end
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f39ef5b-e02e-4ae0-879c-857cdd28ddda/Flowchart_%282%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T121334Z&X-Amz-Expires=86400&X-Amz-Signature=f1be47181f0b686b5b8dd4709e877e8696006c5734b67c998e0b6c912db0c5ea&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%282%29.jpg%22)
+
+
+# Members
+| Member | Position | GitHub | E-mail
+| :---: | :---: | :---: | :---: |
+| 김원호 | Front-end | @Hodukim | wonho1993@gmail.com |
+| 경미래 | Front-end | @miraecod | miraecod@gmail.com |
+| 김민성 | Back-end | @alstjd8826 | htk4064@gmail.com |
+| 이근화 | Back-end | @dlrmsghk09 | | |
+
+
+# Project Details
+[📎 For more details, visit our wiki page!](https://github.com/codestates/OneLineDiary-client/wiki/)

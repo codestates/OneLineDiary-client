@@ -1,4 +1,4 @@
-# 📝 한 줄 일기
+# 한 줄 일기 📝
 > " 당신의 하루를 한 줄에 담아보세요. "
 
 여러분은 평소에 일기를 자주 쓰시나요?
@@ -27,7 +27,7 @@
 
 ## Front-end
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f2370dba-d486-4244-93f5-e9185b45deb9/Flowchart_%283%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T135729Z&X-Amz-Expires=86400&X-Amz-Signature=4fd7f157d2424fcd1941af8101930aaf2b6b3650c09fba04e062437c3621ed10&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%283%29.jpg%22)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/03f01166-e6d7-433e-ba6c-ab38058779ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T140306Z&X-Amz-Expires=86400&X-Amz-Signature=35055d4beac3c18258bddc45b7f115be8083142a7465401a41281e803813e918&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 ## Back-end
 ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f39ef5b-e02e-4ae0-879c-857cdd28ddda/Flowchart_%282%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T121334Z&X-Amz-Expires=86400&X-Amz-Signature=f1be47181f0b686b5b8dd4709e877e8696006c5734b67c998e0b6c912db0c5ea&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%282%29.jpg%22)

@@ -1,13 +1,79 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Login from './pages/Login';
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Main from "./pages/Main";
+import Post from "./pages/Post";
+import Update from "./pages/Update";
+import Mypage from "./pages/Mypage";
 
-const App = () => {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLogin: false,
+      userInfo: null,
+      accessToken: "",
+    };
+    this.loginHandler = this.loginHandler.bind(this);
+    this.logoutHandler = this.logoutHandler.bind(this);
+    this.userInfoHandler = this.userInfoHandler.bind(this);
+    this.issueAccessToken = this.issueAccessToken.bind(this);
+  }
 
-  return (
-    <Login />
-  )
+  loginHandler() {
+    this.setState({ isLogin: true });
+  }
 
+  logoutHandler() {
+    this.setState({ isLogin: false });
+  }
+
+  userInfoHandler(info) {
+    this.setState({ userInfo: info });
+  }
+
+  issueAccessToken(token) {
+    this.setState({ accessToken: token });
+  }
+
+  render() {
+    const { userInfo, accessToken } = this.state;
+    return (
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={Login}
+            loginHandler={this.loginHandler}
+            issueAccessToken={this.issueAccessToken}
+          />
+          <Route path="/user/signup" component={Signup} />
+          <Route
+            path="/main"
+            component={Main}
+            userInfo={userInfo}
+            accessToken={accessToken}
+            logoutHandler={this.logoutHandler}
+          />
+          <Route path="/main/post" component={Post} accessToken={accessToken} />
+          <Route
+            path="/main/update"
+            component={Update}
+            accessToken={accessToken}
+          />
+          <Route
+            path="/mypage/userinfo"
+            component={Mypage}
+            userInfo={userInfo}
+            accessToken={accessToken}
+            userInfoHandler={this.userInfoHandler}
+          />
+        </Switch>
+      </Router>
+    );
+  }
 }
-
 export default App;

@@ -77,7 +77,8 @@ const Mypage = props => {
   );
 
   const validatePassword = () => {
-    const validation = /^[a-zA-Z0-9]{6,12}$/;
+    console.log("validatePassword 실행됨");
+    const validation = /^[a-zA-Z0-9]{5,11}$/;
     if (validation.test(password)) {
       setMessage("사용 가능한 비밀번호입니다.");
       return true;
@@ -87,23 +88,21 @@ const Mypage = props => {
   };
 
   const validateRePassword = () => {
-    if (validatePassword) {
-      if (password === rePassword) {
-        setMessage("비밀번호가 확인되었습니다.");
-        return true;
-      }
-      setMessage("비밀번호가 같은지 다시 한 번 확인해주세요.");
-      return false;
+    if (password === rePassword) {
+      setMessage("비밀번호가 확인되었습니다.");
+      return true;
     }
+    setMessage("비밀번호가 같은지 다시 한 번 확인해주세요.");
+    return false;
   };
 
   const validateNickname = () => {
-    const validation = /^[\wㄱ-ㅎㅏ-ㅣ가-힣]{2,10}$/;
+    const validation = /^[\wㄱ-ㅎㅏ-ㅣ가-힣]{1,9}$/;
     if (validation.test(nickname)) {
       setMessage("사용 가능한 닉네임입니다.");
       return true;
     }
-    setMessage("2~10자 이내 영문/한글만 가능합니다.");
+    setMessage("2~10자 이내 한글/영문만 가능합니다.");
     return false;
   };
 

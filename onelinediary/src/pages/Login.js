@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import '../styles/Login.scss';
+import "../styles/Login.scss";
 
 function Login(props) {
   // console.log(props);
-  const [id, setId] = useState("");
+  const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    console.log({ id, password });
+    console.log({ userId, password });
   });
 
   const handleLogin = () => {
-    if (id === "" || password === "") {
+    if (userId === "" || password === "") {
       setErrorMessage("회원정보를 정확히 입력해주세요.");
     } else {
       axios
         .post(
-          "https://api.onelinediary.com/user/login",
-          { id, password },
+          "https://localhost:4000/user/login",
+          { userId, password },
           { "Content-Type": "application/json", withCredentials: true }
         )
         .then(res => {
@@ -45,8 +45,8 @@ function Login(props) {
             <input
               type="id"
               placeholder="your id here"
-              value={id}
-              onChange={({ target: { value } }) => setId(value)}
+              value={userId}
+              onChange={({ target: { value } }) => setUserId(value)}
             ></input>
           </div>
           <div className="비밀번호 박스">

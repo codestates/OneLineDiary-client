@@ -68,8 +68,39 @@ body {
   align-items: center;
   flex: 8 1 auto;
   font-size: 70px;
-  color: #325779;
+  color: #686766;
   position: relative;
+}
+
+.logo {
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #cfddec;
+  display: flex;
+  height: 265px;
+  width: 265px;
+  right: 10px;
+}
+
+.logo,
+.logo::after {
+  border: 2px solid #cfddec;
+  border-radius: 100%;
+}
+
+.logo::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -10px;
+}
+
+#text-in-logo {
+  color: #686766;
 }
 
 .id-container,
@@ -87,7 +118,7 @@ body {
 }
 
 .title {
-  color: #325779;
+  color: #4d4b48;
 }
 
 .title.id {
@@ -110,21 +141,21 @@ input[type="password"] {
   font-size: 1.3rem;
   font-family: MapoGoldenPier;
   font-weight: bold;
-  color: #325779;
+  color: #4d4b48;
   outline: none;
   position: relative;
   cursor: pointer;
 }
 
 input::placeholder {
-  color: #325779;
+  color: #4d4b48;
   font-size: 0.9rem;
   font-weight: normal;
 }
 
 .btn-container {
-  flex: 1.2 1 auto;
-  padding-top: 30px;
+  flex: 1.1 1 auto;
+  padding-top: 20px;
   position: relative;
 }
 
@@ -133,12 +164,17 @@ input::placeholder {
   width: 130px;
   padding: 10px;
   margin: 0px 30px;
-  border: 2px solid #fffdf6;
-  color: #fffdf6;
+  border: 2px solid #fbf8ed;
+  color: #fbf8ed;
   background: transparent;
   font-family: MapoGoldenPier;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
+}
+
+#btn.login:focus,
+#btn.signup:focus {
+  outline: none;
 }
 
 a:-webkit-any-link {
@@ -150,7 +186,7 @@ a:-webkit-any-link {
   flex: 3 1 auto;
   overflow: auto;
   padding-top: 30px;
-  color: #ff6f4a;
-  font-size: 1rem;
+  color: #ff623b;
+  font-size: 1.1rem;
   position: relative;
 }

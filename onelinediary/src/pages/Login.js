@@ -37,15 +37,17 @@ function Login(props) {
       {/* <center> */}
       <div className="contents-container">
         <div className="logo-container">
-          <div id="logo">
-            한 줄<br />일 기
+          <div className="logo">
+            <div id="text-in-logo">
+              한 줄<br />일 기
+            </div>
           </div>
         </div>
         <div className="id-container">
           <span className="title id">아이디</span>
           <input
             type="id"
-            placeholder="아이디를 입력해주세요."
+            placeholder="아이디를 입력해주세요"
             value={userId}
             onChange={({ target: { value } }) => setUserId(value)}
           ></input>
@@ -54,7 +56,7 @@ function Login(props) {
           <span className="title pw">비밀번호</span>
           <input
             type="password"
-            placeholder="비밀번호를 입력해주세요."
+            placeholder="비밀번호를 입력해주세요"
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
           ></input>

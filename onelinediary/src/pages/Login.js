@@ -33,42 +33,43 @@ function Login(props) {
   };
 
   return (
-    <div>
-      <center>
-        <div className="가장 큰 박스">
-          <div className="로고랑 이름 들어있는 박스">
-            <img id="logo" alt="logo" src="" />
-            <div>한 줄 일기</div>
+    <div className="top-container">
+      {/* <center> */}
+      <div className="contents-container">
+        <div className="logo-container">
+          <div id="logo">
+            한 줄<br />일 기
           </div>
-          <div className="아이디 박스">
-            <span>ID</span>
-            <input
-              type="id"
-              placeholder="your id here"
-              value={userId}
-              onChange={({ target: { value } }) => setUserId(value)}
-            ></input>
-          </div>
-          <div className="비밀번호 박스">
-            <span>password</span>
-            <input
-              type="password"
-              placeholder="your password here"
-              value={password}
-              onChange={({ target: { value } }) => setPassword(value)}
-            ></input>
-          </div>
-          <div className="버튼 박스">
-            <button className="로그인 버튼" onClick={handleLogin}>
-              login
-            </button>
-            <button className="회원가입 버튼">
-              <Link to="/user/signup">sign-up</Link>
-            </button>
-          </div>
-          <div className="에러메세지 창">{errorMessage}</div>
         </div>
-      </center>
+        <div className="id-container">
+          <span className="title id">아이디</span>
+          <input
+            type="id"
+            placeholder="아이디를 입력해주세요."
+            value={userId}
+            onChange={({ target: { value } }) => setUserId(value)}
+          ></input>
+        </div>
+        <div className="pw-container">
+          <span className="title pw">비밀번호</span>
+          <input
+            type="password"
+            placeholder="비밀번호를 입력해주세요."
+            value={password}
+            onChange={({ target: { value } }) => setPassword(value)}
+          ></input>
+        </div>
+        <div className="btn-container">
+          <button id="btn" className="login" onClick={handleLogin}>
+            로그인
+          </button>
+          <button id="btn" className="signup">
+            <Link to="/user/signup">회원가입</Link>
+          </button>
+        </div>
+        <div className="message-container">{errorMessage}</div>
+      </div>
+      {/* </center> */}
     </div>
   );
 }

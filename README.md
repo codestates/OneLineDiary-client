@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 한 줄 일기 📝
 ![image](https://user-images.githubusercontent.com/72856436/116417516-4c9e9280-a876-11eb-8390-35c85e695613.png)
 
@@ -46,3 +47,6 @@
 
 # Project Details
 [📎 For more details, visit our wiki page!](https://github.com/codestates/OneLineDiary-client/wiki/)
+=======
+# OneLineDiary-client
+>>>>>>> 6c5b6487cfdcdc9f604728cc27414b16c2ccb2a8

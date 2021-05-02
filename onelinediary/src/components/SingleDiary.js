@@ -1,16 +1,19 @@
 import React from "react";
 import "../styles/SingleDiary.scss";
-const SingleDiary = () => {
-  return (
-    <center>
-      <div className="singleDiary">
-        <span className="date">date</span>
-        <img className="emoji" src="" alt=""></img>
-        <span className="content">content</span>
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import optionIcon from "../styles/select.png";
 
-        <button>update,delete button</button>
-      </div>
-    </center>
+const SingleDiary = () => {
+  // const handleOptions = () => {};
+
+  return (
+    <div className="singleDiary">
+      <span className="date">date</span>
+      <img className="emoji" src="" alt=""></img>
+      <span className="content">content</span>
+      {/* <button onClick={handleOptions} img={optionIcon}></button> */}
+    </div>
   );
 };
 export default SingleDiary;

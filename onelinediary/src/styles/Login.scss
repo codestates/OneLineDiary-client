@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: MapoGoldenPier;
+  src: url("./MapoGoldenPier.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: MapoGoldenPier;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.top-container::before {
+  background-image: url("./login_image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+}
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1800px;
+  height: 860px;
+  position: relative;
+}
+
+.contents-container::before {
+  background: rgb(208, 245, 255);
+  background: linear-gradient(
+    160deg,
+    rgba(208, 245, 255, 1) 0%,
+    rgba(148, 166, 190, 1) 50%,
+    rgb(246, 207, 197) 100%
+  );
+  opacity: 0.5;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  position: absolute;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 8 1 auto;
+  font-size: 70px;
+  color: #686766;
+  position: relative;
+}
+
+.logo {
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #cfddec;
+  display: flex;
+  height: 265px;
+  width: 265px;
+  right: 10px;
+}
+
+.logo,
+.logo::after {
+  border: 2px solid #cfddec;
+  border-radius: 100%;
+}
+
+.logo::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -10px;
+}
+
+#text-in-logo {
+  color: #686766;
+}
+
+.id-container,
+.pw-container {
+  flex: 0.8 1 auto;
+  width: 100%;
+  height: 30px;
+  padding-left: 742px;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.pw-container {
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #4d4b48;
+}
+
+.title.id {
+  padding-right: 116px;
+}
+
+.title.pw {
+  padding-right: 98px;
+}
+
+input[type="id"],
+input[type="password"] {
+  width: 170px;
+  height: 60%;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: MapoGoldenPier;
+  font-weight: bold;
+  color: #4d4b48;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #4d4b48;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.btn-container {
+  flex: 1.1 1 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+#btn.login,
+#btn.signup {
+  width: 130px;
+  padding: 10px;
+  margin: 0px 30px;
+  border: 2px solid #fbf8ed;
+  color: #fbf8ed;
+  background: transparent;
+  font-family: MapoGoldenPier;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btn.login:focus,
+#btn.signup:focus {
+  outline: none;
+}
+
+a:-webkit-any-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.message-container {
+  flex: 3 1 auto;
+  overflow: auto;
+  padding-top: 30px;
+  color: #ff623b;
+  font-size: 1.1rem;
+  position: relative;
+}

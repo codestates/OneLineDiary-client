@@ -46,30 +46,42 @@ class App extends React.Component {
           <Route
             exact
             path="/"
-            component={Login}
-            loginHandler={this.loginHandler}
-            issueAccessToken={this.issueAccessToken}
+            render={() => (
+              <Login
+                loginHandler={this.loginHandler}
+                userInfoHandler={this.userInfoHandler}
+                issueAccessToken={this.issueAccessToken}
+              />
+            )}
           />
-          <Route path="/user/signup" component={Signup} />
+          <Route path="/user/signup" render={() => <Signup />} />
           <Route
             path="/main"
-            component={Main}
-            userInfo={userInfo}
-            accessToken={accessToken}
-            logoutHandler={this.logoutHandler}
+            render={() => (
+              <Main
+                userInfo={userInfo}
+                accessToken={accessToken}
+                logoutHandler={this.logoutHandler}
+              />
+            )}
           />
-          <Route path="/main/post" component={Post} accessToken={accessToken} />
+          <Route
+            path="/main/post"
+            render={() => <Post accessToken={accessToken} />}
+          />
           <Route
             path="/main/update"
-            component={Update}
-            accessToken={accessToken}
+            crender={() => <Update accessToken={accessToken} />}
           />
           <Route
             path="/mypage/userinfo"
-            component={Mypage}
-            userInfo={userInfo}
-            accessToken={accessToken}
-            userInfoHandler={this.userInfoHandler}
+            render={() => (
+              <Mypage
+                userInfo={userInfo}
+                accessToken={accessToken}
+                userInfoHandler={this.userInfoHandler}
+              />
+            )}
           />
         </Switch>
       </Router>

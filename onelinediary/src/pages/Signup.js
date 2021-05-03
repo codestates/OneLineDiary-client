@@ -1,8 +1,7 @@
 import React from "react";
-// import "../styles/Signup.scss";
+import "../styles/Signup.scss";
 import axios from "axios";
-// import { useForm } from "react-hook-form";
-import { isId, isValidation } from "../stores/validation";
+// import { isId, isValidation } from "../stores/validation";
 
 axios.defaults.withCredentials = true;
 //구현해야될 코드
@@ -11,39 +10,58 @@ axios.defaults.withCredentials = true;
 //3. handleInputValue input값에 값이 입력될때 setstate로 값이 변화 O구현
 //4. 아이디 비밀번호 닉네임 유효성검사 구현
 
-// const checkVali = () => {
-//   const { register, handleSubmit, errors } = useForm();
-//   const onSubmit = (values) => console.log(values);
-// }
-const checkPassword = (e) => {
-  //  8 ~ 10자 영문, 숫자 조합
-  var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,10}$/;
-  // 형식에 맞는 경우 true 리턴
-  console.log("비밀번호 유효성 검사 :: ", regExp.test(e.target.value));
-};
-const checkId = (e) => {
-  var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,}$/;
-  console.log("ID 유효성 검사 :: ", regExp.test(e.target.value));
-};
+// const checkPassword = (e) => {
+//   //  8 ~ 10자 영문, 숫자 조합
+//   var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,10}$/;
+//   // 형식에 맞는 경우 true 리턴
+//   console.log("비밀번호 유효성 검사 :: ", regExp.test(e.target.value));
+// };
+// const checkId = (e) => {
+//   var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,}$/;
+//   console.log("ID 유효성 검사 :: ", regExp.test(e.target.value));
+// };
 class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       id: "",
-      id_confirm: "",
+      // id_confirm: "",
       idError: "",
       password: "",
-      password_confirm: "",
+      rePassword: "",
       nickname: "",
       errorMessage: "",
     };
-    this.handleInputValue = this.handleInputValue.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeRePassword = this.onChangeRePassword.bind(this);
+    this.onChangeNickname = this.onChangeNickname.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.onChangeId = this.onChangeId(this);
+
     // this.handleCancel = this.handleCancel(this);
   }
 
-  handleInputValue = (key) => (e) => {
-    this.setState({ [key]: e.target.value });
+  onChangeId = (id) => (e) => {
+    this.setState({ [id]: e.target.value });
+    this.validId();
+    //입력되는 값 변경 함수
+  };
+
+  onChangePassword = (password) => (e) => {
+    this.setState({ [password]: e.target.value });
+    this.validPassword();
+    //입력되는 값 변경 함수
+  };
+
+  onChangeRePassword = (rePassword) => (e) => {
+    this.setState({ [rePassword]: e.target.value });
+    this.validateRePassword();
+    //입력되는 값 변경 함수
+  };
+
+  onChangeNickname = (nickname) => (e) => {
+    this.setState({ [nickname]: e.target.value });
+    this.validateNickname();
     //입력되는 값 변경 함수
   };
 
@@ -68,28 +86,71 @@ class Signup extends React.Component {
         nickname: nickname,
       }) // id,pw,nick의 정보를 post로 보내줌
       .then((res) => {
+        console.log("로그인페이지로 돌아감");
         this.props.history.push("/Login");
       });
   };
+  validId = () => {
+    // const { password, rePassword, nickname } = this.state;
+    console.log("validId 실행됨");
+    const validation = /^[a-zA-Z0-9]{5,11}$/;
+    if (validation.test(this.state.id)) {
+      this.setState.errorMessage("사용 가능한 ID입니다");
+      return true;
+    }
+    this.setState.errorMessage("6~12자 이내 영문/숫자만 가능합니다.");
+    return false;
+  };
 
-  idValidation = () => {
-    let idError = "";
-    if (!isId(this.state.id)) {
-      idError = "ID를 입력해주세요";
+  validPassword = () => {
+    // const { password, rePassword, nickname } = this.state;
+    console.log("valiPw 실행됨");
+    const validation = /^[a-zA-Z0-9]{5,11}$/;
+    if (validation.test(this.state.password)) {
+      this.setState.errorMessage("사용 가능한 비밀번호입니다");
+      return true;
     }
-    if (idError) {
-      this.setState({ idError });
-      return false;
-    }
-    return true;
+    this.setState.errorMessage("6~12자 이내 영문/숫자만 가능합니다.");
+    return false;
   };
-  onTextValidation = () => {
-    if (!isValidation(this.state.id).success) {
-      this.setState({ idError: isValidation(this.state.id.error) });
-      return false;
+  validateRePassword = () => {
+    if (this.state.password === this.state.rePassword) {
+      this.setState.errorMessage("비밀번호가 확인되었습니다.");
+      return true;
     }
-    return true;
+    this.setState.errorMessage("비밀번호가 같은지 다시 한 번 확인해주세요.");
+    return false;
   };
+  validateNickname = () => {
+    const validation = /^[\wㄱ-ㅎㅏ-ㅣ가-힣]{1,9}$/;
+    if (validation.test(this.state.nickname)) {
+      this.setState.errorMessage("사용 가능한 닉네임입니다.");
+      return true;
+    }
+    this.setState.errorMessage("2~10자 이내 한글/영문만 가능합니다.");
+    return false;
+  };
+
+  // idValidation = () => {
+  //   //id가 validation
+  //   let idError = "";
+  //   if (!isId(this.state.id)) {
+  //     idError = "ID를 입력해주세요";
+  //   }
+  //   if (idError) {
+  //     this.setState({ idError });
+  //     return false;
+  //   }
+  //   return true;
+  // };
+  // onTextValidation = () => {
+  //   if (!isValidation(this.state.id).success) {
+  //     this.setState({ idError: isValidation(this.state.id.error) });
+  //     return false;
+  //   }
+  //   return true;
+  // };
+
   onSubmit = (e) => {
     e.preventDefault();
     const valid = this.onTextValidation();
@@ -111,9 +172,10 @@ class Signup extends React.Component {
               <div className="아이디 박스">
                 <span>ID</span>
                 <input
+                  className="input-id"
                   type="text"
                   name="id"
-                  onChange={this.handleInputValue("id")}
+                  onChange={this.onChangeId("id")}
                   placeholder="아이디를 입력해주세요"
                 />
                 <div style={{ color: "red", fontSize: "12px" }}>
@@ -121,32 +183,34 @@ class Signup extends React.Component {
                 </div>
               </div>
             </form>
-
+            {/* 
             <div className="아이디 확인박스">
               <span>ID Confirm</span>
               <input
+                className="input-confirm-id"
                 type="text"
                 onChange={this.handleInputValue("id_confirm")}
                 placeholder="아이디를 확인해주세요"
-                onBlur={checkId}
+                // onBlur={checkId}
               ></input>
-            </div>
+            </div> */}
 
             <div className="암호 박스">
               <span>Password</span>
               <input
+                className="input-pw"
                 type="text"
-                onChange={this.handleInputValue("password")}
+                onChange={this.onChangePassword("password")}
                 placeholder="비밀번호를 입력해주세요"
-                onBlur={checkPassword}
               ></input>
             </div>
 
             <div className="암호 확인박스">
               <span>Password Confirm</span>
               <input
+                className="input-confirm-pw"
                 type="text"
-                onChange={this.handleInputValue("password_confirm")}
+                onChange={this.onChangeRePassword("rePassword")}
                 placeholder="비밀번호를 확인해주세요"
               ></input>
             </div>
@@ -154,8 +218,9 @@ class Signup extends React.Component {
             <div className="닉네임 박스">
               <span>Nickname</span>
               <input
+                className="input-nick"
                 type="text"
-                onChange={this.handleInputValue("nickname")}
+                onChange={this.onChangeNickname("nickname")}
                 placeholder="닉네임을 입력해주세요"
               ></input>
             </div>

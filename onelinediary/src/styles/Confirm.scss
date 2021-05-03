@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background: white;
+  max-width: 80%;
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .question {
+  font-size: 1.3rem;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+.modal-body .btn-yes,
+.modal-body .btn-no {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rbga(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

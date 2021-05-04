@@ -1,35 +1,31 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Signup = (props) => {
-  const [id, setId] = useState("");
+  const [userId, setId] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [message, setMessage] = useState("");
+  const history = useHistory();
 
   useEffect(() => {
-    console.log("유저정보 보내주는 post 요청 실행됨");
-    axios
-      .post("https://localhost:4000/user/signup", {
-        id,
-        password,
-        nickname,
-      })
-      .then((res) => {
-        console.log("로그인페이지로 돌아감");
-        this.props.history.push("/Login");
-      })
-      .catch((err) => console.error(err));
+    console.log(
+      "유저정보 보내주는 post 요청 실행됨",
+      userId,
+      password,
+      nickname
+    );
   });
 
   const onChangeId = useCallback(
     (e) => {
-      console.log({ id: e.target.value });
+      console.log({ userId: e.target.value });
       setId(e.target.value);
       validateId();
     },
-    [id]
+    [userId]
   );
 
   const onChangePassword = useCallback(
@@ -61,12 +57,12 @@ const Signup = (props) => {
 
   const validateId = () => {
     console.log("validateId 실행됨");
-    const validation = /^[a-zA-Z0-9]{5,11}$/;
-    if (validation.test(id)) {
+    const validation = /^[a-zA-Z0-9]{8,15}$/;
+    if (validation.test(userId)) {
       setMessage("사용 가능한 ID입니다.");
       return true;
     }
-    setMessage("6~12자 이내 영문/숫자만 가능합니다.");
+    setMessage("6~15자 이내 영문/숫자만 가능합니다.");
     return false;
   };
 
@@ -101,12 +97,22 @@ const Signup = (props) => {
   };
   const handleSignup = () => {
     //버튼을 누르면 회원가입(정보가 서버에 저장)이 되면서 로그인페이지로 이동
-    if (!id || !password || !nickname) {
+    if (userId === "" || password === "" || nickname === "") {
       setMessage("모든 항목은 필수로 작성되야 합니다");
       //정보가 다 안들어가면
       return;
     } else {
-      setMessage("정보가 모두 입력되었습니다");
+      axios
+        .post("https://localhost:4000/user/signup", {
+          userId,
+          password,
+          nickname,
+        })
+        .then((res) => {
+          console.log(res);
+          history.push("/");
+        })
+        .catch((err) => console.error(err));
     }
   };
 
@@ -114,12 +120,11 @@ const Signup = (props) => {
     <div>
       <center>
         <h1>회원 가입</h1>
-        <div>로고 타이틀?</div>
 
         {/* <form onSubmit={this.onSubmit}> */}
         <form>
           <div className="아이디 박스">
-            <span>ID</span>
+            <span>아이디</span>
             <input
               className="input-id"
               type="text"
@@ -143,7 +148,7 @@ const Signup = (props) => {
             </div> */}
 
         <div className="암호 박스">
-          <span>Password</span>
+          <span>비밀번호</span>
           <input
             className="input-pw"
             type="password"
@@ -153,7 +158,7 @@ const Signup = (props) => {
         </div>
 
         <div className="암호 확인박스">
-          <span>Password Confirm</span>
+          <span>비밀번호 확인</span>
           <input
             className="input-confirm-pw"
             type="password"
@@ -163,7 +168,7 @@ const Signup = (props) => {
         </div>
 
         <div className="닉네임 박스">
-          <span>Nickname</span>
+          <span>닉네임</span>
           <input
             className="input-nick"
             type="text"

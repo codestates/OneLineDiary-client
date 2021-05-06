@@ -1,39 +1,55 @@
-// * props로 받을거: userInfo, accessToken, logoutHandler
-// * state: contents (배열)
-// * 일기목록 요청하는 함수 (GET)
-
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import DiaryList from "../components/DiaryList";
 import "../styles/Main.scss";
 
-const Main = ({ userInfo, accessToken, logoutHandler }) => {
-  const [contents, setContents] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://localhost:4000/main", {
-        headers: {
-          authorization: `Bearer ${accessToken}`,
-          "Content-Type": "application/json",
-          withCredentials: true,
-        },
-      })
-      .then(res => {
-        console.log(res.data);
-        setContents(res.data);
-      });
-  });
-
+const Main = ({
+  accessToken,
+  userInfo,
+  content,
+  contentHandler,
+  logoutHandler,
+}) => {
   return (
-    <div className="body">
-      <div className="section">
-        <Section />
-      </div>
-      <div className="diarylist">
-        <DiaryList diaries={contents} accessToken={accessToken} />
-      </div>
+    <div>
+      {content === null ? (
+        "작성하신 일기가 없습니다."
+      ) : (
+        <div className="ma-top-container">
+          <div className="ma-contents-container">
+            <div className="section-container">
+              <Section
+                accessToken={accessToken}
+                userInfo={userInfo}
+                logoutHandler={logoutHandler}
+              />
+            </div>
+            <div className="diary-conatiner">
+              <div>
+                <div className="month">5월</div>
+              </div>
+              <div className="diary">
+                <DiaryList
+                  accessToken={accessToken}
+                  diaries={content}
+                  contentHandler={contentHandler}
+                />
+              </div>
+              <div className="write-diary">
+                <Link to="/main/post">클릭하여 오늘의 하루를 남겨보세요.</Link>
+              </div>
+            </div>
+            <div className="ma-logo-container">
+              <div className="ma-logo">
+                <div id="ma-text-in-logo">
+                  한 줄<br />일 기
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

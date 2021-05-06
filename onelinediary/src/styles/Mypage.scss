@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mp-top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.mp-top-container::before {
+  background-image: url("./login_image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+}
+
+.mp-contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 650px;
+  height: 650px;
+  position: relative;
+}
+
+.mp-contents-container::before {
+  border-radius: 100px;
+  background: rgb(193, 217, 223);
+  opacity: 0.5;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  position: absolute;
+}
+
+.mp-title-container {
+  flex: 0.5 1 auto;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 50px;
+  position: relative;
+  color: #4d4b48;
+  // border: 1px solid salmon;
+}
+
+.mp-userinfo-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 650px;
+  position: relative;
+  color: #4d4b48;
+  // border: 1px solid salmon;
+}
+
+.mp-userinfo-container .mp-id,
+.mp-userinfo-container .mp-pw,
+.mp-userinfo-container .mp-re-pw,
+.mp-userinfo-container .mp-nickname {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  #mp-id,
+  #mp-pw,
+  #mp-re-pw,
+  #mp-nickname {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+    font-size: 1rem;
+  }
+  #mp-id {
+    width: 166.5px;
+  }
+  #mp-re-pw {
+    width: 219.5px;
+  }
+  #mp-nickname {
+    width: 211.5px;
+  }
+  .mp-input-id {
+    padding-left: 35px;
+    padding-right: 57px;
+    font-weight: bold;
+  }
+  .mp-input-re-pw {
+    padding-right: 60px;
+  }
+  .mp-input-nickname {
+    padding-left: 146px;
+  }
+}
+
+.mp-id .mp-input-id,
+.mp-pw .mp-input-pw,
+.mp-re-pw .mp-input-re-pw,
+.mp-nickname .mp-input-nickname {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+input[type="password"] {
+  padding-left: 10px;
+}
+
+input[type="password"],
+input[type="text"] {
+  text-align: left;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: MapoGoldenPier;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.mp-extra-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  // border: 1px solid salmon;
+  .mp-message,
+  .mp-btn {
+    height: 100%;
+    // border: solid 1px salmon;
+  }
+  .mp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    margin-top: 10px;
+  }
+  .mp-message {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 auto;
+    padding-top: 10px;
+    color: #ff623b;
+  }
+  #mp-btn-back,
+  #mp-btn-update {
+    width: 130px;
+    height: 40px;
+    margin: 0 20px;
+    border: 2px solid #fbf8ed;
+    color: #fbf8ed;
+    background: transparent;
+    font-family: MapoGoldenPier;
+    font-weight: bold;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+  }
+}

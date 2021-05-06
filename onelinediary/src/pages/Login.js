@@ -1,38 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.scss";
+require("dotenv").config();
 
-function Login({ loginHandler, issueAccessToken, userInfoHandler }) {
+function Login({
+  loginHandler,
+  issueAccessToken,
+  userInfoHandler,
+  handleResponseSuccess,
+}) {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(
-    "회원정보를 정확히 입력해주세요."
-  );
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isValid, setIsValid] = useState(false);
+  const history = useHistory();
 
-  useEffect(() => {
-    console.log({ userId, password });
-  });
-
-  const handleLogin = () => {
-    if (
-      userId === "" ||
-      password === "" ||
-      (userId === "" && password === "")
-    ) {
+  const handleLogin = async () => {
+    if (userId === "" || password === "") {
       setErrorMessage("회원정보를 모두 입력하셨나요?");
     } else {
-      axios
+      await axios
         .post(
-          "https://localhost:4000/user/login",
+          `${process.env.REACT_APP_API_URL}/user/login`,
           { userId, password },
           { "Content-Type": "application/json", withCredentials: true }
         )
         .then(res => {
-          // console.log("res.data: ", res.data);
-          loginHandler();
-          issueAccessToken(res.data.accessToken);
-          userInfoHandler(res.data.userInfo);
+          console.log("res.data: ", res.data);
+          if (res.data.accessToken) {
+            console.log("로그인 요청 성공");
+            setIsValid(true);
+            loginHandler();
+            issueAccessToken(res.data.accessToken);
+            userInfoHandler(res.data.userInfo);
+            handleResponseSuccess(res.data);
+            history.push("/main");
+          } else {
+            console.log("로그인 요청 실패");
+            setErrorMessage("가입된 회원이 아닙니다.");
+          }
         })
         .catch(err => console.error(err));
     }
@@ -69,10 +76,10 @@ function Login({ loginHandler, issueAccessToken, userInfoHandler }) {
             onChange={({ target: { value } }) => setPassword(value)}
           ></input>
         </div>
-        {errorMessage ? (
+        {isValid ? (
           <div className="btn-container">
             <button id="btn" className="login" onClick={handleLogin}>
-              <Link to="/">로그인</Link>
+              로그인
             </button>
             <button id="btn" className="signup">
               <Link to="/user/signup">회원가입</Link>
@@ -82,11 +89,12 @@ function Login({ loginHandler, issueAccessToken, userInfoHandler }) {
         ) : (
           <div className="btn-container">
             <button id="btn" className="login" onClick={handleLogin}>
-              <Link to="/main">로그인</Link>
+              <Link to="/">로그인</Link>
             </button>
             <button id="btn" className="signup">
               <Link to="/user/signup">회원가입</Link>
             </button>
+            <div className="message-container">{errorMessage}</div>
           </div>
         )}
       </div>

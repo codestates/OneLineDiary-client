@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.su-top-container {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.su-top-container::before {
+  background-image: url("./login_image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+}
+
+.su-contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 650px;
+  height: 650px;
+  position: relative;
+}
+
+.su-contents-container::before {
+  border-radius: 100px;
+  background: rgb(193, 217, 223);
+  opacity: 0.5;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  content: "";
+  position: absolute;
+}
+
+.su-title-container {
+  display: flex;
+  flex: 0.4 1 auto;
+  justify-content: center;
+  width: 100%;
+  padding-top: 80px;
+  position: relative;
+  color: #4d4b48;
+}
+
+.su-userinfo-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  position: relative;
+  color: #4d4b48;
+  #su-id-box,
+  #su-pw-box,
+  #su-repw-box,
+  #su-nickname-box {
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    .su-title-id,
+    .su-title-pw,
+    .su-title-repw,
+    .su-title-nickname {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      width: 52%;
+      height: 100%;
+      padding-left: 150px;
+      font-size: 1.1rem;
+    }
+    .su-input-id,
+    .su-input-pw,
+    .su-input-repw,
+    .su-input-nickname {
+      flex: 1 1 auto;
+      width: 50%;
+      font-size: 1.1rem;
+      color: #4d4b48;
+    }
+    .su-input-id,
+    .su-input-nickname {
+      padding-left: 10px;
+    }
+  }
+}
+
+input[type="text"],
+input[type="password"] {
+  flex: 1 1 auto;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #818181;
+}
+
+.su-btn-container {
+  display: flex;
+  flex: 0.5 1 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  #su-btn-signup,
+  #su-btn-back {
+    width: 130px;
+    height: 40%;
+    margin: 20px 30px 30px 30px;
+    border: 2px solid #fbf8ed;
+    color: #fbf8ed;
+    background: transparent;
+    font-family: MapoGoldenPier;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  #su-btn-signup:focus,
+  #su-btn-back:focus {
+    outline: none;
+  }
+}
+
+.su-message-container {
+  display: flex;
+  flex: 0.6 1 auto;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  #su-message,
+  #su-message-next {
+    font-size: 1.1rem;
+    color: #ff623b;
+  }
+}

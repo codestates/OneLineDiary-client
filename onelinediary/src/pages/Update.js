@@ -24,7 +24,7 @@ class Post extends React.Component {
     return axios.get("https://api.onelinediary.com/main/post");
   }
 
-  handleInputValue = (key) => (e) => {
+  handleInputValue = key => e => {
     this.setState({ [key]: e.target.value });
     //입력되는 값 변경 함수
   };
@@ -47,7 +47,7 @@ class Post extends React.Component {
         content: content,
         emoji: "?",
       }) // id,pw,nick의 정보를 post로 보내줌
-      .then((res) => {
+      .then(res => {
         this.props.history.push("/main");
       });
   };

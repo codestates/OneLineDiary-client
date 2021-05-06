@@ -1,52 +1,47 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useLocation, useHistory, Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import "../styles/Mypage.scss";
 
-const Mypage = props => {
+const Mypage = ({ userInfo, userInfoHandler, accessToken }) => {
+  console.log(userInfo);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [message, setMessage] = useState("");
-  const [profileNickname, setprofileNickname] = useState("");
-
-  useEffect(() => {
-    console.log("유저정보 가져오는 GET 요청 실행됨");
-    axios
-      .get("https://localhost:4000/mypage/userinfo", {
-        headers: {
-          authorization: `Bearer ${props.accessToken}`,
-          "Content-Type": "application/json",
-          withCredentials: true,
-        },
-      })
-      .then(res => {
-        setId(res.id);
-        setprofileNickname(res.profileNickname);
-      })
-      .catch(err => console.error(err));
-  }, []);
+  const history = useHistory();
+  require("dotenv").config();
 
   const updateUserInfo = () => {
+    console.log("업데이트 요청 보냄");
+    axios
+      .patch(
+        `${process.env.REACT_APP_API_URL}/mypage/editUserinfo`,
+        { userId: userInfo.id, nickname: nickname, password: password },
+        {
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+            withCredentials: true,
+          },
+        }
+      )
+      .then(res => {
+        console.log("업데이트 완료");
+        console.log(res.data);
+        setId(res.data.userInfo.id);
+        userInfoHandler(res.data.userInfo);
+        cleanInput();
+        history.push("/mypage/userinfo");
+      });
+  };
+
+  const cleanInput = () => {
     setPassword("");
     setRePassword("");
     setNickname("");
     setMessage("");
-    axios
-      .patch(
-        "https://localhost:4000/mypage/editUserinfo",
-        {
-          headers: {
-            authorization: `Bearer ${props.accessToken}`,
-            "Content-Type": "application/json",
-            withCredentials: true,
-          },
-        },
-        { id, nickname, password }
-      )
-      .then(res => {
-        setprofileNickname(res.nickname);
-        setPassword(res.password);
-      });
   };
 
   const onChangePassword = useCallback(
@@ -107,58 +102,63 @@ const Mypage = props => {
   };
 
   return (
-    <div>
-      <center>
-        <div className="mypageContainer"></div>
-        <h1>{profileNickname}님의 프로필</h1>
-        <div>
-          <div className="user-info-box">
-            <div>
-              <span className="title-id">ID</span>
-              <span className="input-id">{id}아이디 자리</span>
-            </div>
-            <div>
-              <span className="title-pw">password</span>
-              <input
-                className="input-pw"
-                type="password"
-                placeholder="your new password"
-                value={password}
-                onChange={onChangePassword}
-              ></input>
-              <div></div>
-            </div>
-            <div>
-              <span className="confirmPw">confirm password</span>
-              <input
-                className="input-confirm-pw"
-                type="password"
-                placeholder="confirm password"
-                value={rePassword}
-                onChange={onChangeRePassword}
-              ></input>
-            </div>
-            <div>
-              <span className="nickname">nickname</span>
-              <input
-                className="input-nickname"
-                type="text"
-                placeholder="your new nickname"
-                value={nickname}
-                onChange={onChangeNickname}
-              ></input>
-            </div>
+    <div className="mp-top-container">
+      <div className="mp-contents-container">
+        <div className="mp-title-container">
+          <h1>{userInfo.nickname} 님의 프로필</h1>
+        </div>
+        <div className="mp-userinfo-container">
+          <div className="mp-id">
+            <span id="mp-id">ID</span>
+            <span className="mp-input-id">{userInfo.id}</span>
           </div>
-          <div>
-            <div className="message-box">{message}</div>
+          <div className="mp-pw">
+            <span id="mp-pw">password</span>
+            <input
+              className="mp-input-pw"
+              type="password"
+              placeholder="새로운 비밀번호"
+              value={password}
+              onChange={onChangePassword}
+            ></input>
+            <div></div>
           </div>
-          <div className="btn-box">
-            <button className="btn-back" onClick={updateUserInfo}>
+          <div className="mp-re-pw">
+            <span id="mp-re-pw">confirm password</span>
+            <input
+              className="mp-input-re-pw"
+              type="password"
+              placeholder="새 비밀번호 확인"
+              value={rePassword}
+              onChange={onChangeRePassword}
+            ></input>
+          </div>
+          <div className="mp-nickname">
+            <span id="mp-nickname">nickname</span>
+            <input
+              className="mp-input-nickname"
+              type="text"
+              placeholder="새로운 닉네임"
+              value={nickname}
+              onChange={onChangeNickname}
+            ></input>
+          </div>
+        </div>
+        <div className="mp-extra-container">
+          <div className="mp-btn">
+            <button id="mp-btn-back">
+              <Link to="/main">back</Link>
+            </button>
+            <button id="mp-btn-update" onClick={updateUserInfo}>
+              {/* <Redirect to="/mypage/userinfo">update</Redirect> */}
               update
             </button>
           </div>
+          <div className="mp-message">
+            <div id="mp-message">{message}</div>
+          </div>
         </div>
-      </center>
+      </div>
     </div>
   );
 };

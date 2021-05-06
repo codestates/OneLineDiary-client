@@ -1,35 +1,42 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../styles/Main.scss";
+require("dotenv").config();
 
-const Section = () => {
+const Section = ({ accessToken, userInfo, logoutHandler }) => {
   const handleLogout = () => {
-    axios.post(
-      "https://localhost:4000/user/logout",
-      {
-        Headers: {
-          //   authorization: `Bearer ${props.accessToken}`,
-          "Content-Type": "application/json",
-          withCredentials: true,
-        },
-      }
-      // { props.userInfo.userId }
-    );
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/user/logout`,
+        { userId: userInfo.userId },
+        {
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+            withCredentials: true,
+          },
+        }
+      )
+      .then(() => {
+        console.log("로그아웃 완료");
+        logoutHandler();
+      });
   };
 
   return (
-    <div>
-      <section>
-        누구누구 님,
+    <div className="sc-section-container">
+      <div className="greeting">
+        {userInfo.nickname} 님,
         <br />
         오늘 하루는 어떠셨나요?
-      </section>
-      <div className="btn-conatiner">
-        <button className="btn-userinfo">
+      </div>
+      <div className="sc-btn-container">
+        <button id="sc-btn-userinfo">
           <Link to="mypage/userinfo">회원정보</Link>
         </button>
-        <button class="btn-logoout" onClick={handleLogout}>
-          <Link to="user/login">로그아웃</Link>
+        <button id="sc-btn-logoout" onClick={handleLogout}>
+          <Link to="/">로그아웃</Link>
         </button>
       </div>
     </div>

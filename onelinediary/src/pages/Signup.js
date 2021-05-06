@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import "../styles/Signup.scss";
+require("dotenv").config();
 
 const Signup = (props) => {
   const [userId, setId] = useState("");
@@ -9,15 +11,6 @@ const Signup = (props) => {
   const [nickname, setNickname] = useState("");
   const [message, setMessage] = useState("");
   const history = useHistory();
-
-  useEffect(() => {
-    console.log(
-      "유저정보 보내주는 post 요청 실행됨",
-      userId,
-      password,
-      nickname
-    );
-  });
 
   const onChangeId = useCallback(
     (e) => {
@@ -29,7 +22,7 @@ const Signup = (props) => {
   );
 
   const onChangePassword = useCallback(
-    (e) => {
+    e => {
       console.log({ password: e.target.value });
       setPassword(e.target.value);
       validatePassword();
@@ -38,7 +31,7 @@ const Signup = (props) => {
   );
 
   const onChangeRePassword = useCallback(
-    (e) => {
+    e => {
       console.log({ rePassword: e.target.value });
       setRePassword(e.target.value);
       validateRePassword();
@@ -47,7 +40,7 @@ const Signup = (props) => {
   );
 
   const onChangeNickname = useCallback(
-    (e) => {
+    e => {
       console.log({ nickname: e.target.value });
       setNickname(e.target.value);
       validateNickname();
@@ -56,7 +49,6 @@ const Signup = (props) => {
   );
 
   const validateId = () => {
-    console.log("validateId 실행됨");
     const validation = /^[a-zA-Z0-9]{8,15}$/;
     if (validation.test(userId)) {
       setMessage("사용 가능한 ID입니다.");
@@ -67,7 +59,6 @@ const Signup = (props) => {
   };
 
   const validatePassword = () => {
-    console.log("validatePassword 실행됨");
     const validation = /^[a-zA-Z0-9]{5,11}$/;
     if (validation.test(password)) {
       setMessage("사용 가능한 비밀번호입니다.");
@@ -95,6 +86,7 @@ const Signup = (props) => {
     setMessage("2~10자 이내 한글/영문만 가능합니다.");
     return false;
   };
+
   const handleSignup = () => {
     //버튼을 누르면 회원가입(정보가 서버에 저장)이 되면서 로그인페이지로 이동
     if (userId === "" || password === "" || nickname === "") {
@@ -103,93 +95,76 @@ const Signup = (props) => {
       return;
     } else {
       axios
-        .post("https://localhost:4000/user/signup", {
+        .post(`${process.env.REACT_APP_API_URL}/user/signup`, {
           userId,
           password,
           nickname,
         })
-        .then((res) => {
+        .then(res => {
           console.log(res);
           history.push("/");
         })
-        .catch((err) => console.error(err));
+        .catch(err => console.error(err));
     }
   };
 
   return (
-    <div>
-      <center>
-        <h1>회원 가입</h1>
-
-        {/* <form onSubmit={this.onSubmit}> */}
-        <form>
-          <div className="아이디 박스">
-            <span>아이디</span>
+    <div className="su-top-container">
+      <div className="su-contents-container">
+        <div className="su-title-container">
+          <h1>한 줄 일기의 유저가 되어보세요</h1>
+        </div>
+        <div className="su-userinfo-container">
+          <div id="su-id-box">
+            <span className="su-title-id">아이디</span>
             <input
-              className="input-id"
+              className="su-input-id"
               type="text"
               name="id"
               onChange={onChangeId}
-              placeholder="아이디를 입력해주세요"
+              // placeholder="아이디를 입력해주세요"
             />
           </div>
-          {/* </div> */}
-        </form>
-        {/* 
-            <div className="아이디 확인박스">
-              <span>ID Confirm</span>
-              <input
-                className="input-confirm-id"
-                type="text"
-                onChange={this.handleInputValue("id_confirm")}
-                placeholder="아이디를 확인해주세요"
-                // onBlur={checkId}
-              ></input>
-            </div> */}
-
-        <div className="암호 박스">
-          <span>비밀번호</span>
-          <input
-            className="input-pw"
-            type="password"
-            onChange={onChangePassword}
-            placeholder="비밀번호를 입력해주세요"
-          ></input>
-        </div>
-
-        <div className="암호 확인박스">
-          <span>비밀번호 확인</span>
-          <input
-            className="input-confirm-pw"
-            type="password"
-            onChange={onChangeRePassword}
-            placeholder="비밀번호를 확인해주세요"
-          ></input>
-        </div>
-
-        <div className="닉네임 박스">
-          <span>닉네임</span>
-          <input
-            className="input-nick"
-            type="text"
-            onChange={onChangeNickname}
-            placeholder="닉네임을 입력해주세요"
-          ></input>
-        </div>
-
-        <div className="버튼 박스">
-          {/* <button className="돌아가기" onClick={this.handleCancel}>
-              돌아가기
-            </button> */}
-          <button className="가입버튼" onClick={handleSignup}>
-            가입하기
-          </button>
-          <div>
-            <div className="message-box">{message}</div>
+          <div id="su-pw-box">
+            <span className="su-title-pw">비밀번호</span>
+            <input
+              className="su-input-pw"
+              type="password"
+              onChange={onChangePassword}
+              // placeholder="비밀번호를 입력해주세요"
+            ></input>
+          </div>
+          <div id="su-repw-box">
+            <span className="su-title-repw">비밀번호 확인</span>
+            <input
+              className="su-input-repw"
+              type="password"
+              onChange={onChangeRePassword}
+              // placeholder="비밀번호를 확인해주세요"
+            ></input>
+          </div>
+          <div id="su-nickname-box">
+            <span className="su-title-nickname">닉네임</span>
+            <input
+              className="su-input-nickname"
+              type="text"
+              onChange={onChangeNickname}
+              // placeholder="닉네임을 입력해주세요"
+            ></input>
           </div>
         </div>
-        {/* </form> */}
-      </center>
+        <div className="su-btn-container">
+          <button id="su-btn-back">
+            <Link to="/">back</Link>
+          </button>
+          <button id="su-btn-signup" onClick={handleSignup}>
+            sign-up
+          </button>
+        </div>
+        <div className="su-message-container">
+          <div id="su-message">{message}</div>
+        </div>
+      </div>
     </div>
   );
 };

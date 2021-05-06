@@ -4,7 +4,7 @@ import axios from "axios";
 import "../styles/Signup.scss";
 require("dotenv").config();
 
-const Signup = () => {
+const Signup = (props) => {
   const [userId, setId] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
@@ -13,7 +13,7 @@ const Signup = () => {
   const history = useHistory();
 
   const onChangeId = useCallback(
-    e => {
+    (e) => {
       console.log({ userId: e.target.value });
       setId(e.target.value);
       validateId();

@@ -43,11 +43,11 @@
 # Flow Chart
 
 ## Front-end
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/03f01166-e6d7-433e-ba6c-ab38058779ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T051142Z&X-Amz-Expires=86400&X-Amz-Signature=532492f52b174f99069369198b0788f820be9401cf36d5000c0639a68d462c94&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/03f01166-e6d7-433e-ba6c-ab38058779ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T140306Z&X-Amz-Expires=86400&X-Amz-Signature=35055d4beac3c18258bddc45b7f115be8083142a7465401a41281e803813e918&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 ## Back-end
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f39ef5b-e02e-4ae0-879c-857cdd28ddda/Flowchart_%282%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T121334Z&X-Amz-Expires=86400&X-Amz-Signature=f1be47181f0b686b5b8dd4709e877e8696006c5734b67c998e0b6c912db0c5ea&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%282%29.jpg%22)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f39ef5b-e02e-4ae0-879c-857cdd28ddda/Flowchart_%282%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T051158Z&X-Amz-Expires=86400&X-Amz-Signature=06ec00a4b7f17b3aa9eaf740a8aabc65c169c399990772472acc4d4216796797&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%282%29.jpg%22)
 
 
 # Members

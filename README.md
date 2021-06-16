@@ -13,6 +13,7 @@
 
 여러분들의 인생을 한 줄로 남겨 보세요.
 
+<br/>
 
 # UI Design
 
@@ -31,10 +32,12 @@
 ## Mypage
 ![Mypage_update](https://user-images.githubusercontent.com/72856436/122176569-ba9f2780-cebf-11eb-8cb4-6fa99ff0c214.gif)
 
+<br/>
 
 # Used Stack & Architecture
 ![stack](https://user-images.githubusercontent.com/72856436/122177232-60eb2d00-cec0-11eb-9bc8-a2b02f215153.png)
 
+<br/>
 
 # Flow Chart
 
@@ -44,6 +47,7 @@
 ## Back-end
 ![flowchart2](https://user-images.githubusercontent.com/72856436/122177164-516be400-cec0-11eb-8f47-6473f9600e2d.jpg)
 
+<br/>
 
 # Members
 | Member | Position | GitHub | E-mail
@@ -53,6 +57,7 @@
 | 김민성 | Back-end | @alstjd8826 | htk4064@gmail.com |
 | 이근화 | Back-end | @dlrmsghk09 | rnjswjadhr09@gmail.com |
 
+<br/>
 
 # Project Details
 [📎 For more details, visit our wiki page!](https://github.com/codestates/OneLineDiary-client/wiki/)

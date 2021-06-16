@@ -17,37 +17,32 @@
 # UI Design
 
 ## Login
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ab141c25-42c0-4ed7-ad07-4509c76b0bcd/Login.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210506%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210506T150743Z&X-Amz-Expires=86400&X-Amz-Signature=daf1e155a2f0fe2eb61fb2402b64c4656aef2bf9d1b4f92caf34132e2830915f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Login.png%22)
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8ec1bddc-183f-41ce-b4b2-97524d939c51/Login.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T033058Z&X-Amz-Expires=86400&X-Amz-Signature=97eaf9045ab4f72cb74c7b30e6919f027c0281dd4132e93e11c9f8993a28b5fb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Login.gif%22)
+![Login](https://user-images.githubusercontent.com/72856436/122176178-49f80b00-cebf-11eb-9b9d-cda38142c820.gif)
 
 ## Signup
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/727a8134-acc0-4591-84f4-117d18295054/Signup.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210506%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210506T150926Z&X-Amz-Expires=86400&X-Amz-Signature=44af7d55c8ba4199b94b26e676dbbdab4cd4e60e60112e70b62d2b5095d189ea&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Signup.png%22)
+![Signup](https://user-images.githubusercontent.com/72856436/122176832-fd60ff80-cebf-11eb-8320-c05d40b4dbeb.gif)
 
 ## Main
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6d0e783-c4f1-4071-90f6-8df81ef28f99/Main.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T033213Z&X-Amz-Expires=86400&X-Amz-Signature=5afe8213e9e7fffbc52e0cb6406436441024ac8724cec1845ec9957ecc89958c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Main.png%22)
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/94aa0827-58f0-4ac9-9607-da84663fb2c1/Peek_2021-05-07_11-30.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T030723Z&X-Amz-Expires=86400&X-Amz-Signature=abf3cd7bf3904069a53f0168139b3350d6f2c07df1fa63a302f42c64fb6755e5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Peek_2021-05-07_11-30.gif%22)
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/76dd9c38-5350-48b5-9a49-a17ba52371fb/Delete.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T030908Z&X-Amz-Expires=86400&X-Amz-Signature=eaeb521cfcbb0ccc8a9336b59e56be755512dc94e88f9d8e00ca5c8b4ecc3fc2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Delete.gif%22)
+![Main](https://user-images.githubusercontent.com/72856436/122176331-70b64180-cebf-11eb-806f-86694b25d79a.gif)
 
 ## Post
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cc877527-0b58-4ffb-957f-4fb3aad9a953/Post.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210506%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210506T151330Z&X-Amz-Expires=86400&X-Amz-Signature=123d3a9e42f0d6959fa4a00603d1883fd6f6cbfaf8dca98983ba3209fb370615&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Post.png%22)
+![Post](https://user-images.githubusercontent.com/72856436/122176510-a529fd80-cebf-11eb-95ed-66c6da2b1e34.gif)
 
 ## Mypage
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5c100ddd-c8b2-4083-a0b0-18e3d457dc8e/Mypage.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T033250Z&X-Amz-Expires=86400&X-Amz-Signature=8fb21db5883e386e20336963e4a740e11a888d1cbe028bba0569b0fefa00190f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Mypage.png%22)
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a574269f-a552-497c-8da5-5d86bd216984/Mypage_update.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T033308Z&X-Amz-Expires=86400&X-Amz-Signature=57af9db9c27024b7c39d3a91957ef3236e041ccbbcd9a09f779a80b6e41605cc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Mypage_update.gif%22)
+![Mypage_update](https://user-images.githubusercontent.com/72856436/122176569-ba9f2780-cebf-11eb-8cb4-6fa99ff0c214.gif)
 
 
 # Used Stack & Architecture
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/60af1fa2-573a-4257-b0ad-ec3bc9b06a35/oneline_diary.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210506%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210506T152443Z&X-Amz-Expires=86400&X-Amz-Signature=dd3ade9562ff799175038d53e2f21725a48256014918493fd20c898156e96fa1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22oneline_diary.png%22)
+![stack](https://user-images.githubusercontent.com/72856436/122177232-60eb2d00-cec0-11eb-9bc8-a2b02f215153.png)
 
 
 # Flow Chart
 
 ## Front-end
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/03f01166-e6d7-433e-ba6c-ab38058779ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T051142Z&X-Amz-Expires=86400&X-Amz-Signature=532492f52b174f99069369198b0788f820be9401cf36d5000c0639a68d462c94&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
-
+![flowchart1](https://user-images.githubusercontent.com/72856436/122177158-4fa22080-cec0-11eb-8caa-082f6c27ae7c.png)
 
 ## Back-end
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f39ef5b-e02e-4ae0-879c-857cdd28ddda/Flowchart_%282%29.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T051158Z&X-Amz-Expires=86400&X-Amz-Signature=06ec00a4b7f17b3aa9eaf740a8aabc65c169c399990772472acc4d4216796797&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Flowchart_%282%29.jpg%22)
+![flowchart2](https://user-images.githubusercontent.com/72856436/122177164-516be400-cec0-11eb-8f47-6473f9600e2d.jpg)
 
 
 # Members
